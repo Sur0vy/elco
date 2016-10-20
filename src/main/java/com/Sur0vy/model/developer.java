@@ -4,7 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "developers")
-public class developers {
+public class developer {
 
     @DatabaseField(columnName = "developer_id", id = true, generatedId = true)
     private int id;
@@ -12,7 +12,7 @@ public class developers {
     @DatabaseField(columnName = "developer_name")
     private String name;
 
-    public developers() {
+    public developer() {
     }
 
     public int getId() {

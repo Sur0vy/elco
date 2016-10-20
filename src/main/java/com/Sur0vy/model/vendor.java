@@ -3,16 +3,16 @@ package com.Sur0vy.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "groups")
-public class groups {
+@DatabaseTable(tableName = "vendors")
+public class vendor {
 
-    @DatabaseField(columnName = "group_id", id = true, generatedId = true)
+    @DatabaseField(columnName = "vendor_id", id = true, generatedId = true)
     private int id;
 
-    @DatabaseField(columnName = "group_name")
+    @DatabaseField(columnName = "vendor_name")
     private String name;
 
-    public groups() {
+    public vendor() {
     }
 
     public int getId() {
