@@ -3,12 +3,11 @@ package com.Sur0vy.model;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import com.Sur0vy.model.Group;
 
 @DatabaseTable(tableName = "components")
 public class Component {
 
-    @DatabaseField(columnName = "component_id", id = true, generatedId = true, canBeNull = false)
+    @DatabaseField(columnName = "component_id", generatedId = true, canBeNull = false)
     private int id;
 
     @DatabaseField(columnName = "group_id", canBeNull = false, foreign = true)
