@@ -5,7 +5,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "groups")
-class Group {
+public class Group {
 
     @DatabaseField(columnName = "group_id", generatedId = true, canBeNull = false)
     private int id;
