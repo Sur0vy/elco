@@ -3,15 +3,16 @@ package com.Sur0vy.model;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import com.Sur0vy.model.Group;
 
 @DatabaseTable(tableName = "components")
-public class component {
+public class Component {
 
     @DatabaseField(columnName = "component_id", id = true, generatedId = true, canBeNull = false)
     private int id;
 
     @DatabaseField(columnName = "group_id", canBeNull = false, foreign = true)
-    private int groupId;
+    private Group group;
 
     @DatabaseField(columnName = "component_name", canBeNull = false, dataType = DataType.STRING)
     private String name;
@@ -28,7 +29,7 @@ public class component {
     @DatabaseField(columnName = "component_analogue", dataType = DataType.STRING)
     private int analogId;
 
-    public component() {
+    public Component() {
     }
 
     public int getId() {
@@ -39,12 +40,12 @@ public class component {
         this.id = id;
     }
 
-    public int getGroupId() {
-        return groupId;
+    public Group getGroup() {
+        return group;
     }
 
-    public void setGroupId(final int groupId) {
-        this.groupId = groupId;
+    public void setGroup(final Group group) {
+        this.group = group;
     }
 
     public String getName() {

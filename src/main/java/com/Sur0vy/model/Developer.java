@@ -4,16 +4,16 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "groups")
-public class group {
+@DatabaseTable(tableName = "developers")
+public class Developer {
 
-    @DatabaseField(columnName = "group_id", id = true, generatedId = true, canBeNull = false)
+    @DatabaseField(columnName = "developer_id", generatedId = true, canBeNull = false)
     private int id;
 
-    @DatabaseField(columnName = "group_name", canBeNull = false, dataType = DataType.STRING)
+    @DatabaseField(columnName = "developer_name", canBeNull = false, dataType = DataType.STRING)
     private String name;
 
-    public group() {
+    public Developer() {
     }
 
     public int getId() {

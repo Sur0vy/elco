@@ -4,16 +4,16 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "vendors")
-public class vendor {
+@DatabaseTable(tableName = "organizations")
+public class Organization {
 
-    @DatabaseField(columnName = "vendor_id", id = true, generatedId = true, canBeNull = false)
+    @DatabaseField(columnName = "organization_id", generatedId = true, canBeNull = false)
     private int id;
 
-    @DatabaseField(columnName = "vendor_name", canBeNull = false, dataType = DataType.STRING)
-    private String name;
+    @DatabaseField(columnName = "organization_name", canBeNull = false, dataType = DataType.STRING)
+    private String Name;
 
-    public vendor() {
+    public Organization() {
     }
 
     public int getId() {
@@ -25,10 +25,10 @@ public class vendor {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(final String name) {
-        this.name = name;
+        Name = name;
     }
 }
