@@ -3,26 +3,27 @@ package com.Sur0vy.controller;
 import com.Sur0vy.model.*;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.sun.xml.internal.rngom.binary.GroupPattern;
 
+import java.io.IOException;
+
 public class DBController {
 
-    private Dao<Vendor, int> vendorDao;
-    private Dao<Organization, int> organizationDao;
-    private Dao<Developer, int> developerDao;
-    private Dao<Group, int> groupDao;
-    private Dao<Document, int> documentDao;
-    private Dao<Component, int> componentDao;
-    private Dao<Code, int> codeDao;
-    private Dao<Bill, int> billDao;
+    private JdbcConnectionSource connectionSource = null;
 
-    private ConnectionSource connectionSource;
+    private Dao<Vendor, Integer> vendorDao;
+    private Dao<Organization, Integer> organizationDao;
+    private Dao<Developer, Integer> developerDao;
+    private Dao<Group, Integer> groupDao;
+    private Dao<Document, Integer> documentDao;
+    private Dao<Component, Integer> componentDao;
+    private Dao<Code, Integer> codeDao;
+    private Dao<Bill, Integer> billDao;
 
-    private void initDatabase(String connectionString) throws Exception {
-
-//        connectionSource = new
-
+    public DBController(String connectionString) throws Exception {
+        connectionSource = new JdbcConnectionSource(connectionString);
         vendorDao = DaoManager.createDao(connectionSource, Vendor.class);
         organizationDao = DaoManager.createDao(connectionSource, Organization.class);
         groupDao = DaoManager.createDao(connectionSource, Group.class);
@@ -31,9 +32,44 @@ public class DBController {
         componentDao = DaoManager.createDao(connectionSource, Component.class);
         codeDao  = DaoManager.createDao(connectionSource, Code.class);
         billDao = DaoManager.createDao(connectionSource, Bill.class);
+    }
 
+    public void closeConnection() throws IOException {
+        if (connectionSource != null)
+            connectionSource.close();
+    }
+
+    public Dao<Vendor, Integer> getVendorDao() {
+        return vendorDao;
+    }
+
+    public Dao<Organization, Integer> getOrganizationDao() {
+        return organizationDao;
+    }
+
+    public Dao<Developer, Integer> getDeveloperDao() {
+        return developerDao;
+    }
+
+    public Dao<Group, Integer> getGroupDao() {
+        return groupDao;
+    }
+
+    public Dao<Document, Integer> getDocumentDao() {
+        return documentDao;
+    }
+
+    public Dao<Component, Integer> getComponentDao() {
+        return componentDao;
     }
 
 
+    public Dao<Code, Integer> getCodeDao() {
+        return codeDao;
+    }
+
+    public Dao<Bill, Integer> getBillDao() {
+        return billDao;
+    }
 
 }
