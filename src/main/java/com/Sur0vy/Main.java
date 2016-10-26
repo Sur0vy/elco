@@ -6,9 +6,9 @@ public class Main {
 
     private static final String DATABASE_URL = "jdbc:h2:mem:account";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        new ConsoleView(DATABASE_URL);
+        ConsoleView consoleView = new ConsoleView(DATABASE_URL);
 
     }
 }

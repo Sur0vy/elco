@@ -4,8 +4,6 @@ import com.Sur0vy.model.*;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.support.ConnectionSource;
-import com.sun.xml.internal.rngom.binary.GroupPattern;
 
 import java.io.IOException;
 
