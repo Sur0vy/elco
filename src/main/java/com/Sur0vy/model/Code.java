@@ -16,6 +16,11 @@ public class Code {
     public Code() {
     }
 
+    public Code(final String id, final String comment){
+        this.id = id;
+        this.comment = comment;
+    }
+
     public String getId() {
         return id;
     }

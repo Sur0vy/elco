@@ -16,6 +16,11 @@ public class Developer {
     public Developer() {
     }
 
+    public Developer(final int id, final String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

@@ -9,7 +9,7 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Bill {
 
     @DatabaseField(columnName = "bill_id", foreign = true, canBeNull = false)
-    private Bill bill;
+    private Document document;
 
     @ForeignCollectionField//(columnName = "component_id")
     private ForeignCollection<Component> components;
@@ -20,12 +20,16 @@ public class Bill {
     public Bill() {
     }
 
-    public Bill getBill() {
-        return bill;
+    public Bill(final Document document) {
+        this.document = document;
     }
 
-    public void setBill(Bill bill) {
-        this.bill = bill;
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        this.document = document;
     }
 
     public ForeignCollection<Component> getComponents() {
@@ -43,4 +47,5 @@ public class Bill {
     public void setCount(int count) {
         this.count = count;
     }
+
 }

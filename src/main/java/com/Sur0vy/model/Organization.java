@@ -16,6 +16,11 @@ public class Organization {
     public Organization() {
     }
 
+    public Organization(final int id, final String name) {
+        this.id = id;
+        Name = name;
+    }
+
     public int getId() {
         return id;
     }
